@@ -19,11 +19,15 @@ a:link {
         position:relative;
         top:28px;
         left:70px;
+        -webkit-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
 
-     -webkit-transform:  translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg) ;translateZ(-300px);
-     -moz-transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg) ;translateZ(-300);
-    -o-transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg) ;translateZ(-300);
-    transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg) ;translateZ(-300);
+    -webkit-transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg);
+       -moz-transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg);
+         -o-transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg);
+            transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg);
 }
 
 .yaxis{
@@ -92,7 +96,7 @@ a:link {
 .left {
 	left:0px;
 	top:0px;
-
+    background: #8A0808;
     -webkit-transform: translateZ(-100px) rotateY(90deg);
 	-moz-transform: translateZ(-100px) rotateY(90deg);
 	-o-transform:translateZ(-100px) rotateY(90deg);
@@ -100,7 +104,7 @@ a:link {
 .b-left {
 	left:0px;
 	top:0px;
-
+    background: #8A0808;
     -webkit-transform: translateZ(-100px) rotateY(90deg) translateZ(200px);
 	-moz-transform:translateZ(-100px) rotateY(90deg) translateZ(200px);
 	-o-transform: translateZ(-100px) rotateY(90deg) translateZ(200px);
@@ -119,7 +123,7 @@ a:link {
 .b-right {
 	left:0px;
 	top:0px;
-    
+    background: #FE2E2E;
     -webkit-transform: translateX(100px) rotateY(0deg) translateZ(-200px);
 	-moz-transform: translateX(100px) rotateY(0deg) translateZ(-200px);
 	-o-transform: translateX(100px) rotateY(0deg) translateZ(-200px);
@@ -130,7 +134,7 @@ a:link {
 .top {
 	left:0px;
 	top:0px;
-
+    background: #FE2E2E;
     -webkit-transform:translateZ(-100px) translateX(100px) translateY(-100px) rotateX(90deg);
 	-moz-transform: translateZ(-100px) translateX(100px) translateY(-100px) rotateX(90deg);
 	-o-transform: translateZ(-100px) translateX(100px) translateY(-100px) rotateX(90deg);
@@ -215,11 +219,11 @@ a:link {
     left:0px;
     width:100%;
     height:700px;
-    background: -moz-linear-gradient(top,  rgba(137,255,241,0) 0%, #45ADA8 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,255,241,0)), color-stop(100%,#45ADA8)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(137,255,241,0) 0%,#45ADA8 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(137,255,241,0) 0%, #45ADA8 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(137,255,241,0) 0%,#45ADA8 100%); /* IE10+ */
+    background: -moz-linear-gradient(top,  rgba(137,255,241,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,255,241,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%, #45ADA8 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089fff1', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 
@@ -244,5 +248,15 @@ a:link {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089fff1', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 
 }
-
+.grad {
+  background: -webkit-linear-gradient(grey, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(grey, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(grey, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(grey, white); /* Standard syntax */
+}
+.bgrad {
+  background: -webkit-linear-gradient(white,grey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white,grey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white,grey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white,grey); /* Standard syntax */
 }
