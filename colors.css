@@ -1,0 +1,40 @@
+.face{
+	border: 0px;
+}
+
+.left {
+
+    background: #C92424	;
+
+}
+.b-left {
+background: #FC3737	;
+}
+
+.right {
+background: #841919	;
+
+}
+.b-right {
+	background: #C92424	;
+
+}
+
+.top {
+	background: #FC3737	;	
+	
+}
+.b-top {
+	background: #841919	;
+
+}
+#gtopface{
+	background: #B6C1C2	;
+}
+
+#gleftface{
+	background: #D7DDDD	;
+	}
+#grightface{
+background: #F0F0F0;
+	}

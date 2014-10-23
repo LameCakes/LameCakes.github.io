@@ -1,0 +1,79 @@
+div:target{
+        left:188px;
+        top:160px;
+        background:blue;
+        z-index: 1;
+        -webkit-transform:rotate(0deg) skewX(0deg) skewY(0deg) scale(1.8,1.8);
+    	-moz-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+	    -o-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+    
+}
+
+#top:hover ~ #topface{
+            left:188px;
+            top:160px;
+            background:blue;
+            z-index: 1;
+            -webkit-transform:rotate(0deg) skewX(0deg) skewY(0deg) scale(1.8,1.8);
+            -moz-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+            -o-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+        
+    }
+#left:hover ~ #leftface{
+            left:188px;
+            top:160px;
+            background:blue;
+            z-index: 1;
+            -webkit-transform:rotate(0deg) skewX(0deg) skewY(0deg) scale(1.8,1.8);
+            -moz-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+            -o-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+        
+    }
+#right:hover ~ #rightface{
+            left:188px;
+            top:160px;
+            background:blue;
+            z-index: 1;
+            -webkit-transform:rotate(0deg) skewX(0deg) skewY(0deg) scale(1.8,1.8);
+            -moz-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+            -o-transform: rotate(0deg) skewX(0deg) skewY(0deg);
+        
+    }
+  
+.face{
+    position:absolute;
+    width: 200px;
+	height: 200px;
+    background: red;
+    transition: all 1s ease;
+    
+}
+
+.left {
+	left:100px;
+	top:168px;
+
+    -webkit-transform: rotate(30deg) skewX(30deg) skewY(0deg);
+	-moz-transform: rotate(30deg) skewX(30deg) skewY(0deg);
+	-o-transform: rotate(30deg) skewX(30deg) skewY(0deg);
+}
+
+.right {
+	left:277px;
+	top:168px;
+
+    -webkit-transform:  rotate(-30deg) skewX(-30deg) skewY(0deg);
+	-moz-transform: rotate(-30deg) skewX(-30deg) skewY(0deg);
+	-o-transform: rotate(-30deg) skewX(-30deg) skewY(0deg);
+
+}
+
+.top {
+	left:188px;
+	top:0px;
+
+    -webkit-transform: rotate(-30deg) skewX(30deg) skewY(0deg) scaleY(0.87);
+	-moz-transform: rotate(-30deg) skewX(30deg) skewY(0deg) scaleY(0.87);
+	-o-transform: rotate(-30deg) skewX(30deg) skewY(0deg) scaleY(0.87);
+
+}
