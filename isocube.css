@@ -19,11 +19,6 @@ a:link {
         position:relative;
         top:28px;
         left:70px;
-        transition: all 1s ease;
-        -webkit-transform-style: preserve-3d;
-           -moz-transform-style: preserve-3d;
-             -o-transform-style: preserve-3d;
-                transform-style: preserve-3d;
 
      -webkit-transform:  translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg) ;translateZ(-300px);
      -moz-transform: translate3d(0px,0px,-2000px) rotateX(-35deg) rotateY(-45deg) rotateX(180deg) ;translateZ(-300);
