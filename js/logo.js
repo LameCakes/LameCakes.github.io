@@ -1,6 +1,6 @@
 $(function(){
 
-	$("#stagenav").load('https://dl.dropboxusercontent.com/u/59393070/portfolio/logo.svg',function(response){
+	$("#halfmenu").load('./img/BG.svg',function(response){
 
 		$(this).addClass("svgLoaded");
 		
