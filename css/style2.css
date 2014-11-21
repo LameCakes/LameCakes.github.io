@@ -22,11 +22,17 @@ body {
 }
 #rightmenu{
 	position:absolute;
-	top:50px;
+	padding: 50px;
+	top:0px;
 	left:50%;
 	width:48%;
 	height:100%;
 	float:right;
+	background-color: rgba(250,203,203,0.5);
+}
+
+#rightmenu {
+
 }
 
 #nav{
