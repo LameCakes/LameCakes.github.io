@@ -4,11 +4,7 @@
   -o-transition: -o-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
 
-  -webkit-transform-origin: 381px 192px;
-  -moz-transform-origin: 381px 192px;
-  -ms-transform-origin: 381px 192px;
-  -o-transform-origin: 381px 192px;
-  transform-origin: 381px 192px;
+ 
   }
 
 #brain{
@@ -17,11 +13,7 @@
   -o-transition: -o-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out; 
 
- -webkit-transform-origin: 171px 113px;
-  -moz-transform-origin: 171px 113px;
-  -ms-transform-origin: 171px 113px;
-  -o-transform-origin: 171px 113px;
-  transform-origin: 171px 113px;
+
 
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
