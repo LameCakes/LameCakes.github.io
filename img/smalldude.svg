@@ -5,6 +5,7 @@
 	 width="650px" height="450px" viewBox="0 0 650 450" enable-background="new 0 0 650 450" xml:space="preserve">
 <g id="hole">
 	<g>
+	<defs>
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="374.335" y1="95.1309" x2="278.4336" y2="358.6178">
 			<stop  offset="0" style="stop-color:#494D59"/>
 			<stop  offset="0.256" style="stop-color:#434955"/>
@@ -12,6 +13,7 @@
 			<stop  offset="0.7927" style="stop-color:#1D3340"/>
 			<stop  offset="1" style="stop-color:#012330"/>
 		</linearGradient>
+	</defs>
 		<path fill="url(#SVGID_1_)" d="M434.295,117.355l24.607,14.209c9.229,5.329,9.229,13.959,0,19.289l-64.094,37.003l154.24,89.053
 			c0.137,0.077,0.291,0.168,0.418,0.254l90.051,51.99c9.229,5.331,9.229,13.963,0,19.291l-21.396,12.354
 			c-9.215,5.315-24.182,5.33-33.406-0.001L510.938,318.2l-36.545,21.1l73.775,42.597c9.23,5.33,9.23,13.962,0.006,19.292
