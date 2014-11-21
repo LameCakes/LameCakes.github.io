@@ -286,3 +286,64 @@
     fill-opacity:1;
     stroke-dashoffset: 2223.6;}
    } 
+
+   @-webkit-keyframes ndraw{
+  90% {
+    fill-opacity:0;
+    stroke-width:1px;
+    stroke-dashoffset: 0;
+  }
+  100%{
+    fill-opacity:1;
+    stroke-width:0px;
+    stroke-dashoffset: 0;}
+ }
+
+@-moz-keyframes ndraw{
+  90% {
+    fill-opacity:0;
+    stroke-width:1px;
+    stroke-dashoffset: 0;
+  }
+  100%{
+    fill-opacity:1;
+    stroke-width:0px;
+    stroke-dashoffset: 0;}
+ }
+
+ @-o-keyframes ndraw{
+  90% {
+    fill-opacity:0;
+    stroke-width:1px;
+    stroke-dashoffset: 0;
+  }
+  100%{
+    fill-opacity:1;
+    stroke-width:0px;
+    stroke-dashoffset: 0;}
+ }
+
+ @-ms-keyframes ndraw{
+  90% {
+    fill-opacity:0;
+    stroke-width:1px;
+    stroke-dashoffset: 0;
+  }
+  100%{
+    fill-opacity:1;
+    stroke-width:0px;
+    stroke-dashoffset: 0;}
+ }
+
+  @keyframes ndraw{ 
+   90% {
+    fill-opacity:0;
+    stroke-width:1px;
+    stroke-dashoffset: 0;
+  }
+  100%{
+    fill-opacity:1;
+    stroke-width:0px;
+    stroke-dashoffset: 0;}
+   } 
+
