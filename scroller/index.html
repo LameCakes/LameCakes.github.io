@@ -15,10 +15,12 @@
 		<script src="pixi.js-master/bin/pixi.dev.js"></script>
 		<script src ="Tile.js"></script>
 		<script>
-			function init() {
-				var scroll = true;
-				var direction = 0;
+			var jumping =false;
+			var scroll = false;				
+			var direction = 0;
 
+			function init() {
+			
 				stage = new PIXI.Stage(0x222222);
 				renderer = PIXI.autoDetectRenderer(
 					512,
@@ -54,9 +56,44 @@
 				idle.tilePosition.y=0;
 				stage.addChild(idle);
 
+				var idlejumptexture = PIXI.Texture.fromImage("resources/idlejump.png");
+				idlejump = new PIXI.TilingSprite(idlejumptexture, 
+							26, 
+							49);
+
+
+				idlejump.position.x=256;
+				idlejump.position.y=277;
+				idlejump.tilePosition.x=0;
+				idlejump.tilePosition.y=0;
+
+				var forwardjumptexture = PIXI.Texture.fromImage("resources/forwardjump.png");
+				forwardjump = new PIXI.TilingSprite(forwardjumptexture, 
+							26, 
+							68);
+
+
+				forwardjump.position.x=256;
+				forwardjump.position.y=277;
+				forwardjump.tilePosition.x=0;
+				forwardjump.tilePosition.y=0;
+
+
+				var backwardjumptexture = PIXI.Texture.fromImage("resources/backwardjump.png");
+				backwardjump = new PIXI.TilingSprite(backwardjumptexture, 
+							26, 
+							68);
+
+
+				backwardjump.position.x=256;
+				backwardjump.position.y=277;
+				backwardjump.tilePosition.x=104;
+				backwardjump.tilePosition.y=0;				
+				
+
 				var runtexture = PIXI.Texture.fromImage("resources/run.png");
 				run = new PIXI.TilingSprite(runtexture, 
-							26, 
+							30, 
 							36);
 
 
@@ -64,6 +101,17 @@
 				run.position.y=290;
 				run.tilePosition.x=0;
 				run.tilePosition.y=0;
+
+				var runbtexture = PIXI.Texture.fromImage("resources/runb.png");
+				runb = new PIXI.TilingSprite(runbtexture, 
+							30, 
+							36);
+
+				runb.position.x=256;
+				runb.position.y=290;
+				runb.tilePosition.x=60;
+				runb.tilePosition.y=0;
+				
 				
 
 				renderer.render(stage);
@@ -91,6 +139,7 @@
 			function gameLoop(){
 
 				document.addEventListener("keydown",start, false);
+				document.addEventListener("keydown",jump, false);
 				requestAnimFrame(gameLoop);
 				
 			}
@@ -100,16 +149,66 @@
 				renderer.render(stage);
 
 				setTimeout(function(){
-					if(scroll) {requestAnimFrame(runsprite)};
+					if(scroll && !jumping) {requestAnimFrame(runsprite)};
 				}, 100);
 				
 			}
+
+			function runback(){
+				runb.tilePosition.x += 30;
+				renderer.render(stage);
+
+				setTimeout(function(){
+					if(scroll) {requestAnimFrame(runback)};
+				}, 100);
+				
+			}
+
+			function idleJump(){
+
+				idlejump.tilePosition.x += 26;
+				renderer.render(stage);
+
+				setTimeout(function(){
+					if(!scroll) {requestAnimFrame(idleJump)};
+				}, 100);
+
+			}
+
+			function forwardJump(){
+
+				forwardjump.tilePosition.x += 26;
+				renderer.render(stage);
+
+				setTimeout(function(){
+					if(scroll) {requestAnimFrame(forwardJump)};
+				}, 100);
+
+			}
+
+
+			function backwardJump(){
+				backwardjump.tilePosition.x += 26;
+				renderer.render(stage);
+
+
+				setTimeout(function(){
+					if(scroll) {requestAnimFrame(backwardJump)};
+				}, 100);
+
+			}
+
+
+
 			function update(){
 	
+
 				document.removeEventListener("keydown",start, false);
 				
+				if(scroll){
 				far.update(direction*0.128);
 				mid.update(direction*0.64);
+				};
 
 				//run.tilePosition.x -= 30;
 
@@ -123,26 +222,94 @@
 
 				
 			}
-			function start(e){
-				scroll = true;
+			function jump(e){
 
-				stage.removeChild(idle);
-				stage.addChild(run);
+				if(e.keyCode==32){
+					jumping = true;
+
+					var index = stage.children.indexOf( run );
+	    			if ( index !== -1 ){
+						stage.removeChild(run);
+						stage.addChild(forwardjump);
+						forwardJump();
+					}
+
+					index = stage.children.indexOf( runb );
+	    			if ( index !== -1 ){
+						stage.removeChild(runb);
+						stage.addChild(backwardjump);
+						backwardJump();
+					}
+
+					index = stage.children.indexOf( idle );
+	    			if ( index !== -1 ){
+						stage.removeChild(idle);
+						stage.addChild(idlejump);
+						idleJump();
+					}
+				}
+				
+			}
+			function removeIdle(){
+
+				index = stage.children.indexOf( idle );
+	    		if ( index !== -1 ){
+				stage.removeChild(idle);}
+
+
+			}
+			function start(e){
+				
+
 
 				switch(e.keyCode){
-					case 37: direction=-1; update();runsprite(); break; //left key
-					case 65: direction=-1; update(); break;//a key
-					case 39: direction=1; update();runsprite(); break; //right key
-					case 68: direction=1; update(); break;//d key
+					
+					case 37: 	direction=-1; removeIdle();
+								stage.addChild(runb);
+								scroll = true; 
+								update();runback(); 
+								break; //left key
+
+					//case 65: direction=-1; update(); break;//a key
+					case 39: 	direction=1; removeIdle();
+								stage.addChild(run);
+								scroll = true; 
+								update();runsprite(); 
+								break; //right key
+
+					case 32: 	update(); 
+								jump(e); 
+								break;
+
+					//case 68: direction=1; update(); break;//d key
+					
 				}
 
-				//console.log(direction*0.1);
-				//update(direction);
 			}
 			function stop(){
 				scroll=false;
+				jumping = false;
 
-				stage.removeChild(run);
+				var index = stage.children.indexOf( run );
+    			if ( index !== -1 ){
+				stage.removeChild(run);}
+
+				var index = stage.children.indexOf( runb );
+    			if ( index !== -1 ){
+				stage.removeChild(runb);}
+
+				var index = stage.children.indexOf( idlejump );
+    			if ( index !== -1 ){
+				stage.removeChild(idlejump);}
+
+				var index = stage.children.indexOf( forwardjump );
+    			if ( index !== -1 ){
+				stage.removeChild(forwardjump);}
+
+				var index = stage.children.indexOf( backwardjump );
+    			if ( index !== -1 ){
+				stage.removeChild(backwardjump);}
+				
 				stage.addChild(idle);
 			}
 		</script>
