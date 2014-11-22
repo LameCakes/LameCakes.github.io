@@ -120,7 +120,7 @@
 				renderer.render(stage);
 				
 
-				
+			
 				requestAnimFrame(idlesprite);
 				requestAnimFrame(gameLoop);
 				
@@ -129,6 +129,7 @@
 
 			function idlesprite(){
 				idle.tilePosition.x -= 26;
+				renderer.render(stage);
 				renderer.render(stage);
 
 				setTimeout(function(){
