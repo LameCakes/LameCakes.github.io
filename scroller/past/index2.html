@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pichu's Adventure</title>
+		<style>
+			body { background-color: #000000;}
+			canvas { background-color: #222222;}
+		</style>	
+
+	<head>
+	<body onload="init();">
+		<div align="center">
+			<canvas id="game-canvas" width="512" height="384"></canvas>
+		</div>
+		<script src="pixi.js-master/bin/pixi.dev.js"></script>
+		<script src ="Tile.js"></script>
+		<script>
+			function init() {
+				var scroll = true;
+				var direction = 0;
+
+				stage = new PIXI.Stage(0x222222);
+				renderer = PIXI.autoDetectRenderer(
+					512,
+					384,
+					document.getElementById("game-canvas")
+				);
+
+
+				far = new Tile("resources/bg-far.png");
+				stage.addChild(far);
+
+				mid = new Tile("resources/bg-mid.png");
+				mid.setHeight(128);
+				stage.addChild(mid);
+
+				var fronttexture = PIXI.Texture.fromImage("resources/front.png");
+				front = new PIXI.Sprite(fronttexture);
+
+
+				front.position.x=0;
+				front.position.y=230;
+				stage.addChild(front);
+				
+				var idletexture = PIXI.Texture.fromImage("resources/idle.png");
+				idle = new PIXI.TilingSprite(idletexture, 
+							26, 
+							36);
+
+
+				idle.position.x=256;
+				idle.position.y=290;
+				idle.tilePosition.x=0;
+				idle.tilePosition.y=0;
+				stage.addChild(idle);
+
+				var runtexture = PIXI.Texture.fromImage("resources/run.png");
+				run = new PIXI.TilingSprite(runtexture, 
+							26, 
+							36);
+
+
+				run.position.x=256;
+				run.position.y=290;
+				run.tilePosition.x=0;
+				run.tilePosition.y=0;
+				
+
+				renderer.render(stage);
+			
+				renderer.render(stage);
+				renderer.render(stage);
+				
+
+				
+				requestAnimFrame(idlesprite);
+				requestAnimFrame(gameLoop);
+				
+
+			}
+
+			function idlesprite(){
+				idle.tilePosition.x -= 26;
+				renderer.render(stage);
+
+				setTimeout(function(){
+					requestAnimFrame(idlesprite);
+				}, 100);
+				
+			}
+			function gameLoop(){
+
+				document.addEventListener("keydown",start, false);
+				requestAnimFrame(gameLoop);
+				
+			}
+
+			function runsprite(){
+				run.tilePosition.x -= 30;
+				renderer.render(stage);
+
+				setTimeout(function(){
+					if(scroll) {requestAnimFrame(runsprite)};
+				}, 100);
+				
+			}
+			function update(){
+	
+				document.removeEventListener("keydown",start, false);
+				
+				far.update(direction*0.128);
+				mid.update(direction*0.64);
+
+				//run.tilePosition.x -= 30;
+
+				renderer.render(stage);
+				
+				document.addEventListener("keyup",stop, false);
+
+				if(scroll){
+					requestAnimFrame(update)
+				};
+
+				
+			}
+			function start(e){
+				scroll = true;
+
+				stage.removeChild(idle);
+				stage.addChild(run);
+
+				switch(e.keyCode){
+					case 37: direction=-1; update();runsprite(); break; //left key
+					case 65: direction=-1; update(); break;//a key
+					case 39: direction=1; update();runsprite(); break; //right key
+					case 68: direction=1; update(); break;//d key
+				}
+
+				//console.log(direction*0.1);
+				//update(direction);
+			}
+			function stop(){
+				scroll=false;
+
+				stage.removeChild(run);
+				stage.addChild(idle);
+			}
+		</script>
+	</body>
+</html>
