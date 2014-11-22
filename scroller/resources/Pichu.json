@@ -1,0 +1,60 @@
+{"frames": {
+
+"backwardjump.png":
+{
+	"frame": {"x":332,"y":2,"w":124,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":5,"w":124,"h":46},
+	"sourceSize": {"w":130,"h":68}
+},
+"forwardjump.png":
+{
+	"frame": {"x":206,"y":2,"w":124,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":5,"w":124,"h":46},
+	"sourceSize": {"w":130,"h":68}
+},
+"idle.png":
+{
+	"frame": {"x":2,"y":2,"w":202,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":202,"h":36},
+	"sourceSize": {"w":208,"h":36}
+},
+"idlejump.png":
+{
+	"frame": {"x":458,"y":2,"w":96,"h":41},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":96,"h":41},
+	"sourceSize": {"w":104,"h":49}
+},
+"run.png":
+{
+	"frame": {"x":556,"y":24,"w":80,"h":20},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":11,"w":80,"h":20},
+	"sourceSize": {"w":90,"h":36}
+},
+"runb.png":
+{
+	"frame": {"x":556,"y":2,"w":80,"h":20},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":11,"w":80,"h":20},
+	"sourceSize": {"w":90,"h":36}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "Pichu.png",
+	"format": "RGBA8888",
+	"size": {"w":638,"h":50},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:56116845c5812b593e5e83eafe567259:f6bec838acd9a2fc55dc77bcafbc8415:0b536a3e9ed687100e64b3142c80d929$"
+}
+}
